@@ -1,0 +1,23 @@
+.history{
+    justify-content: space-around;
+}
+.history__img{
+    border-radius: 30px;
+}
+.history__text{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    width: 550px;
+}
+.history__text h2 {
+    font-weight: 500;
+    font-size: 30px;
+    width: auto;
+}
+.history__text p {
+    text-align: justify;
+    font-weight: 300;
+    width: 100%;
+}

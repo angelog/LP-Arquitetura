@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    font-family: "Inter";
+}
+
+.bg-black {
+    background-color:#303030;
+    color: #FFFFFF;
+}
+header,section{
+    display: flex;
+    padding: 32px;
+    align-items: center;
+}
+footer{
+    text-align: center;
+    margin: 4px;
+}
