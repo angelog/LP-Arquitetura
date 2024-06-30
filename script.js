@@ -1,19 +1,30 @@
-function getDateNow() {
-    const formatador = new Intl.DateTimeFormat('pt-BR');
-    return formatador.format(new Date());
+function showNotification(callback) {
+    const notification = document.getElementById('notification');
+    notification.classList.add('show');
+    if(callback) callback();
+
+    setTimeout(() => {
+        notification.classList.remove('show');
+    }, 3000);
+}
+
+function clearForm() {
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
 }
 
 
 document.getElementById('contactForm').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Impede o envio padrão do formulário
-
+    event.preventDefault();
     const formData = new FormData(this);
     const data = {
-        Created: getDateNow()
+        Created: "x-sheetmonkey-current-date"
     };
+
     formData.forEach((value, key) => {
         data[key] = value;
     });
+
     await fetch('https://api.sheetmonkey.io/form/3JQrV16RX3t3hBhgQAhbn9', {
         method: 'POST',
         headers: {
@@ -21,5 +32,6 @@ document.getElementById('contactForm').addEventListener('submit', async function
         },
         body: JSON.stringify(data)
     })
-    alert('Formulário enviado com sucesso!');
+
+    showNotification(clearForm)
 });

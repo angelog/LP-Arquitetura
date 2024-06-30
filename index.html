@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/styles/sections/data.css">
     <link rel="stylesheet" href="assets/styles/sections/history.css">
     <link rel="stylesheet" href="assets/styles/sections/footer.css">
+    <link rel="stylesheet" href="assets/styles/sections/notification.css">
     <title>Landing Page</title>
 </head>
 <body>
@@ -50,8 +51,8 @@
         <div class="footer__form">
             <h2>Conheça mais sobre nossos serviços:</h2>
             <form class="form" id="contactForm">
-                <input type="text" placeholder="Nome" name="Name" required />
-                <input type="email" placeholder="Email" name="Email" required />
+                <input type="text" placeholder="Nome" name="Name" id="name" required />
+                <input type="email" placeholder="Email" name="Email" id="email" required />
                 <button type="submit" id="submit">Fale Conosco</button>
             </form>
         </div>
@@ -59,6 +60,7 @@
     <footer>
         <small>&copy;Angelo2024</small>
     </footer>
+    <section id="notification" class="notification">Formulário enviado com sucesso!</section>
     <script src="script.js"></script>
 </body>
 </html>
